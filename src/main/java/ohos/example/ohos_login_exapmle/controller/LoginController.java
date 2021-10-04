@@ -23,12 +23,11 @@ public class LoginController {
            {
                returnData.put("code",0);
                returnData.put("msg","登录成功");
-               return returnData;
            }else {
                returnData.put("code",1);
                returnData.put("msg","登录失败，用户名或密码错误");
-               return returnData;
            }
+           return returnData;
 
        }catch (Exception e){
            Map<String,Object> errorReturn = new HashMap<>();
