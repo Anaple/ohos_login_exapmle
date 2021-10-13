@@ -4,6 +4,9 @@ import ohos.example.ohos_login_exapmle.mapper.LoginMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class LoginService {
     @Autowired
@@ -26,6 +29,9 @@ public class LoginService {
     }
     public boolean updateUser(String value,String col ,int id){
         return loginMapper.updateUser(value,col,id);
+    }
+    public List<Map<String,Object>> getAllUser(){
+        return loginMapper.getAllUser();
     }
 
 }

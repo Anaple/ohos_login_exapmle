@@ -22,5 +22,9 @@ public class LoginProvider {
         return sql;
 
     }
+    public String getAllUserSql(){
+        String sql ="SELECT * FROM userinfo";
+        return sql;
+    }
 
 }

@@ -5,6 +5,9 @@ import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+import java.util.Map;
+
 @Mapper
 @Repository
 public interface LoginMapper {
@@ -24,6 +27,8 @@ public interface LoginMapper {
     @UpdateProvider(type = LoginProvider.class,method = "updateUserSql")
 
     boolean updateUser(String value ,String col,int id);
+    @SelectProvider(type = LoginProvider.class,method = "getAllUserSql")
+    List<Map<String,Object>> getAllUser();
 
 
 }

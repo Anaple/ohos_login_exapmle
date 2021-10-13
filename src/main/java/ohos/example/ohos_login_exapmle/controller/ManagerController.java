@@ -2,6 +2,7 @@ package ohos.example.ohos_login_exapmle.controller;
 
 import ohos.example.ohos_login_exapmle.service.LoginService;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.aop.target.LazyInitTargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -50,9 +52,10 @@ public class ManagerController {
             returnData.put("code",1);
         }
         return returnData;
-
-
-
+    }
+    @GetMapping("/getAllUser")
+    public List<Map<String,Object>> getAllUser(){
+        return loginService.getAllUser();
     }
 
 
