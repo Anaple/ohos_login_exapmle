@@ -15,7 +15,7 @@ public interface LoginMapper {
     int checkLogin(String username ,String password);
 
     @InsertProvider(type = LoginProvider.class,method = "createUserSql")
-    boolean createUser(String username,String password);
+    boolean createUser(String username,String password,int id);
 
     @SelectProvider(type = LoginProvider.class ,method = "checkUserSql")
     int checkUser(String username);

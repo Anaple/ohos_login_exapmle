@@ -15,7 +15,8 @@ public class LoginService {
         return  loginMapper.checkLogin(username,password);
     }
     public boolean createUser(String username,String password){
-        return  loginMapper.createUser(username,password);
+        return
+                loginMapper.createUser(username,password,getAllUser().size()+1);
     }
     public boolean checkUser(String username){
         if(loginMapper.checkUser(username)!=0){

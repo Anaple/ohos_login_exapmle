@@ -6,7 +6,7 @@ public class LoginProvider {
         return sql;
     }
     public String createUserSql(){
-        String sql = "INSERT INTO userinfo (username,password) VALUES (#{username},#{password})";
+        String sql = "INSERT INTO userinfo (id,username,password) VALUES (#{id},#{username},#{password})";
         return  sql;
     }
     public String checkUserSql(){
